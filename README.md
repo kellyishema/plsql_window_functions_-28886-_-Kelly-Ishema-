@@ -73,6 +73,8 @@ Success Metric:
 •	Compare raw monthly sales vs. moving average to distinguish genuine trends from temporary fluctuations
 •	Improve demand forecasting accuracy by 25% compared to single-month projections
 •	Use trend analysis to set realistic quarterly targets based on smoothed historical performance
+# ER diagram 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/af897739-4e46-48d6-a30a-9d30c6bd4362" />
 
 
 
