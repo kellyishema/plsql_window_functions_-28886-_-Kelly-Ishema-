@@ -76,6 +76,68 @@ Success Metric:
 # ER diagram 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/af897739-4e46-48d6-a30a-9d30c6bd4362" />
 
+# Key Insights
+1. Vehicle Performance Varies Strongly by Region
 
+SUVs and higher-priced vehicles (e.g., BMW X5, Ford F-150) consistently rank among the top-selling models in their regions, indicating regional preferences and stronger margins from premium inventory.
+
+2. Sales Momentum Builds Over Time, Not Evenly
+
+Running monthly sales totals show a steady upward trend, with noticeable jumps in later months. This indicates cumulative momentum driven by repeat customers and improved conversion rates, rather than one-off spikes.
+
+3. Month-over-Month Growth Is Inconsistent Across Regions
+
+Some regions experience positive month-over-month growth while others show declines, highlighting uneven regional performance.
+
+# Integrity Statement
+I affirm that this submission is my original work and complies fully with academic integrity requirements. 
+No unauthorized assistance or materials were used.
+
+# References.
+Academic & Textbook Resources
+
+Elmasri, R., & Navathe, S. B. (2016). Fundamentals of Database Systems (7th ed.). Pearson Education.
+— Authoritative source on ER diagrams, relational modeling, primary keys, and foreign keys.
+
+Silberschatz, A., Korth, H. F., & Sudarshan, S. (2020). Database System Concepts (7th ed.). McGraw-Hill Education.
+— Covers SQL querying, relational integrity, and analytical database concepts.
+
+Kimball, R., & Ross, M. (2013). The Data Warehouse Toolkit (3rd ed.). Wiley.
+— Business-focused resource on fact tables, dimensions, and analytics-ready schema design.
+
+Official Documentation
+
+PostgreSQL Global Development Group. (2024). PostgreSQL Documentation – Window Functions.
+— Official documentation for RANK(), SUM() OVER(), LAG(), NTILE(), and AVG() OVER().
+
+Oracle Corporation. (2023). Oracle SQL Language Reference – Analytic Functions.
+— Official reference for ANSI-compliant SQL analytic/window functions.
+
+Microsoft Learn. (2024). SQL Server Documentation – OVER Clause.
+— Official Microsoft resource explaining running totals, moving averages, and ranking.
+
+ISO/IEC. (2016). ISO/IEC 9075: SQL — Database Language Standard.
+— International standard defining SQL syntax and behavior.
+
+Tutorials & Learning Resources
+
+W3Schools. (2024). SQL Tutorial: SQL Window Functions.
+— Beginner-friendly tutorial explaining window functions with examples.
+
+Mode Analytics. (2023). SQL Window Functions Tutorial.
+— Practical, analytics-oriented guide to ranking, running totals, and time-based analysis.
+
+DataCamp. (2024). SQL Window Functions Course.
+— Hands-on tutorial resource for analytical SQL queries.
+
+Business & Industry Resources
+
+IBM. (2023). Introduction to Relational Databases and SQL.
+— Business-focused overview of relational databases and analytical querying.
+
+Amazon Web Services (AWS). (2024). Best Practices for Designing Relational Databases.
+— Industry guidance on schema design and analytics performance.
+
+# screenshots proving personal work.
 
 
