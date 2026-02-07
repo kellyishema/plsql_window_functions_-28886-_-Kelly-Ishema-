@@ -5,6 +5,13 @@ CREATE TABLE customers (
     age INT,
     region VARCHAR(50)
 );
+INSERT INTO customers (customer_id, first_name, last_name, age, region) VALUES
+(1, 'John', 'Smith', 35, 'East'),
+(2, 'Maria', 'Johnson', 42, 'West'),
+(3, 'David', 'Brown', 29, 'South'),
+(4, 'Linda', 'Davis', 51, 'North'),
+(5, 'James', 'Wilson', 38, 'East');
+
 
 CREATE TABLE vehicles (
     vehicle_id INT PRIMARY KEY,
@@ -12,12 +19,25 @@ CREATE TABLE vehicles (
     vehicle_type VARCHAR(50),
     price DECIMAL(10,2)
 );
+INSERT INTO vehicles (vehicle_id, model, vehicle_type, price) VALUES
+(101, 'Toyota Camry', 'Sedan', 27000.00),
+(102, 'Honda CR-V', 'SUV', 32000.00),
+(103, 'Ford F-150', 'Truck', 45000.00),
+(104, 'Tesla Model 3', 'Electric', 48000.00),
+(105, 'BMW X5', 'SUV', 61000.00);
+
 
 CREATE TABLE dealerships (
     dealership_id INT PRIMARY KEY,
     dealership_name VARCHAR(100),
     region VARCHAR(50)
 );
+INSERT INTO dealerships (dealership_id, dealership_name, region) VALUES
+(201, 'Kelly Price Autos Kacyiru', 'Kacyiru'),
+(202, 'Kelly Price Autos Kanombe', 'Kanombe'),
+(203, 'Kelly Price Autos Kibagabaga', 'Kibagabaga'),
+(204, 'Kelly Price Autos Gisozi', 'Gisozi');
+
 
 CREATE TABLE sales (
     sale_id INT PRIMARY KEY,
