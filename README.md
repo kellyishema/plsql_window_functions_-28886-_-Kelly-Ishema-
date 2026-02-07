@@ -140,4 +140,6 @@ Amazon Web Services (AWS). (2024). Best Practices for Designing Relational Datab
 
 # screenshots proving personal work.
 
+<img width="1306" height="634" alt="personal work screenshot1" src="https://github.com/user-attachments/assets/ad1d6463-1ae7-4348-b42e-2210e5f9b7b9" />
 
+<img width="1098" height="641" alt="personal work screenshot2" src="https://github.com/user-attachments/assets/c0575508-3274-491f-8d6c-6916068765a6" />
