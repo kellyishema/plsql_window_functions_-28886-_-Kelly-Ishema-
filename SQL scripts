@@ -1,0 +1,38 @@
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    age INT,
+    region VARCHAR(50)
+);
+
+CREATE TABLE vehicles (
+    vehicle_id INT PRIMARY KEY,
+    model VARCHAR(50),
+    vehicle_type VARCHAR(50),
+    price DECIMAL(10,2)
+);
+
+CREATE TABLE dealerships (
+    dealership_id INT PRIMARY KEY,
+    dealership_name VARCHAR(100),
+    region VARCHAR(50)
+);
+
+CREATE TABLE sales (
+    sale_id INT PRIMARY KEY,
+    sale_date DATE,
+    sale_amount DECIMAL(10,2),
+    customer_id INT,
+    vehicle_id INT,
+    dealership_id INT,
+    CONSTRAINT fk_customer
+        FOREIGN KEY (customer_id)
+        REFERENCES customers(customer_id),
+    CONSTRAINT fk_vehicle
+        FOREIGN KEY (vehicle_id)
+        REFERENCES vehicles(vehicle_id),
+    CONSTRAINT fk_dealership
+        FOREIGN KEY (dealership_id)
+        REFERENCES dealerships(dealership_id)
+);
