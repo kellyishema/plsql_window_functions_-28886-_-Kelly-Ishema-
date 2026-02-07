@@ -25,6 +25,24 @@ INSERT INTO vehicles (vehicle_id, model, vehicle_type, price) VALUES
 (103, 'Ford F-150', 'Truck', 45000.00),
 (104, 'Tesla Model 3', 'Electric', 48000.00),
 (105, 'BMW X5', 'SUV', 61000.00);
+SELECT
+    d.region,
+    EXTRACT(QUARTER FROM s.sale_date) AS sales_quarter,
+    v.model,
+    SUM(s.sale_amount) AS total_sales,
+    RANK() OVER (
+        PARTITION BY d.region, EXTRACT(QUARTER FROM s.sale_date)
+        ORDER BY SUM(s.sale_amount) DESC
+    ) AS sales_rank
+FROM sales s
+JOIN vehicles v ON s.vehicle_id = v.vehicle_id
+JOIN dealerships d ON s.dealership_id = d.dealership_id
+GROUP BY
+    d.region,
+    EXTRACT(QUARTER FROM s.sale_date),
+    v.model
+QUALIFY sales_rank <= 5;
+
 
 
 CREATE TABLE dealerships (
@@ -66,3 +84,4 @@ INSERT INTO sales (sale_id, sale_date, sale_amount, customer_id, vehicle_id, dea
 (1008, '2024-05-11', 45000.00, 2, 103, 202);
 
 );
+
