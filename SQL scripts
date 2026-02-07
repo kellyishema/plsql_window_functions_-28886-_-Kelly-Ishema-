@@ -6,11 +6,11 @@ CREATE TABLE customers (
     region VARCHAR(50)
 );
 INSERT INTO customers (customer_id, first_name, last_name, age, region) VALUES
-(1, 'John', 'Smith', 35, 'East'),
-(2, 'Maria', 'Johnson', 42, 'West'),
-(3, 'David', 'Brown', 29, 'South'),
-(4, 'Linda', 'Davis', 51, 'North'),
-(5, 'James', 'Wilson', 38, 'East');
+(1, 'John', 'Smith', 35, 'Kagarama'),
+(2, 'Maria', 'Johnson', 42, 'Nyamirambo'),
+(3, 'David', 'Brown', 29, 'Gacuriro'),
+(4, 'Linda', 'Davis', 51, 'Rusororo'),
+(5, 'James', 'Wilson', 38, 'Kimironko');
 
 
 CREATE TABLE vehicles (
