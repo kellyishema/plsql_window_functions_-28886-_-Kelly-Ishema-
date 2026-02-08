@@ -76,24 +76,6 @@ Success Metric:
 # ER diagram 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/af897739-4e46-48d6-a30a-9d30c6bd4362" />
 # JOIN QUERIES
-SELECT
-    d.region,
-    EXTRACT(QUARTER FROM s.sale_date) AS sales_quarter,
-    v.model,
-    SUM(s.sale_amount) AS total_sales,
-    RANK() OVER (
-        PARTITION BY d.region, EXTRACT(QUARTER FROM s.sale_date)
-        ORDER BY SUM(s.sale_amount) DESC
-    ) AS sales_rank
-FROM sales s
-JOIN vehicles v ON s.vehicle_id = v.vehicle_id
-JOIN dealerships d ON s.dealership_id = d.dealership_id
-GROUP BY
-    d.region,
-    EXTRACT(QUARTER FROM s.sale_date),
-    v.model
-QUALIFY sales_rank <= 5;
-
 # INNER JOIN
 
 This join returns only records that exist in both tables.
