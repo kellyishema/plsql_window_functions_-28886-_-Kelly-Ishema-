@@ -75,6 +75,52 @@ Success Metric:
 •	Use trend analysis to set realistic quarterly targets based on smoothed historical performance
 # ER diagram 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/af897739-4e46-48d6-a30a-9d30c6bd4362" />
+# INNER JOIN
+
+This join returns only records that exist in both tables.
+
+In dealership terms:
+You only see leads that actually became sales.
+If a lead never resulted in a sale, it is excluded.
+# LEFT JOIN
+
+This join returns all records from the first table, plus matching records from the second table.
+
+In dealership terms:
+You see every lead, whether or not it turned into a sale.
+Leads without sales still appear, but sales information is empty.
+# RIGHT JOIN
+
+This join returns all records from the second table, plus matching records from the first.
+
+In dealership terms:
+You see every sale, even if the original CRM lead is missing.
+# FULL OUTER JOIN
+
+This join returns all records from both tables, matching where possible.
+
+In dealership terms:
+You can identify:
+
+Leads with no sales.
+
+Sales with no leads.
+# CROSS JOIN
+
+This join combines every row from one table with every row from another.
+
+In dealership terms:
+Every dealership is matched with every sales target or incentive plan.
+# SELF JOIN
+
+This join matches a table to itself.
+
+In dealership terms:
+You compare customer records against other customer records to find:
+
+Repeat buyers
+
+Multiple purchases by the same person.
 
 # Key Insights
 1. Vehicle Performance Varies Strongly by Region
