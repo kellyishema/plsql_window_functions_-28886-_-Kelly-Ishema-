@@ -1,1 +1,88 @@
+# INNER JOINS
 
+-- Get complete sales information with customer and vehicle details
+SELECT 
+    s.sale_id,
+    s.sale_date,
+    c.first_name,
+    c.last_name,
+    v.model,
+    v.vehicle_type,
+    s.sale_amount,
+    d.dealership_name
+FROM sales s
+INNER JOIN customers c ON s.customer_id = c.customer_id
+INNER JOIN vehicles v ON s.vehicle_id = v.vehicle_id
+INNER JOIN dealerships d ON s.dealership_id = d.dealership_id;
+
+# MULTIPLE JOINS
+-- Compare customer region with dealership region
+SELECT 
+    c.first_name || ' ' || c.last_name AS customer_name,
+    c.region AS customer_region,
+    d.dealership_name,
+    d.region AS dealership_region,
+    v.model,
+    s.sale_amount
+FROM sales s
+JOIN customers c ON s.customer_id = c.customer_id
+JOIN vehicles v ON s.vehicle_id = v.vehicle_id
+JOIN dealerships d ON s.dealership_id = d.dealership_id
+ORDER BY s.sale_date;
+
+# LEFT JOIN
+-- Show all customers, even if they haven't made purchases
+SELECT 
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    c.region,
+    COALESCE(COUNT(s.sale_id), 0) AS purchase_count,
+    COALESCE(SUM(s.sale_amount), 0) AS total_spent
+FROM customers c
+LEFT JOIN sales s ON c.customer_id = s.customer_id
+GROUP BY c.customer_id, c.first_name, c.last_name, c.region
+ORDER BY purchase_count DESC;
+
+Here are the RIGHT JOIN, FULL OUTER JOIN, and SELF JOIN queries for your database:
+1. RIGHT JOIN Examples
+# RIGHT JOIN - All Vehicles (including unsold ones)
+SELECT 
+    v.vehicle_id,
+    v.model,
+    v.vehicle_type,
+    v.price,
+    COALESCE(COUNT(s.sale_id), 0) AS times_sold,
+    COALESCE(SUM(s.sale_amount), 0) AS total_revenue
+FROM sales s
+RIGHT JOIN vehicles v ON s.vehicle_id = v.vehicle_id
+GROUP BY v.vehicle_id, v.model, v.vehicle_type, v.price
+ORDER BY times_sold DESC;
+
+# RIGHT JOIN - All Dealerships Performance
+SELECT 
+    d.dealership_id,
+    d.dealership_name,
+    d.region,
+    COUNT(s.sale_id) AS sales_count,
+    COALESCE(SUM(s.sale_amount), 0) AS total_revenue,
+    COALESCE(AVG(s.sale_amount), 0) AS avg_sale
+FROM sales s
+RIGHT JOIN dealerships d ON s.dealership_id = d.dealership_id
+GROUP BY d.dealership_id, d.dealership_name, d.region
+ORDER BY sales_count DESC;
+
+# RIGHT JOIN - Vehicle Details with Sales Info
+SELECT 
+    v.model,
+    v.vehicle_type,
+    v.price AS listed_price,
+    s.sale_date,
+    s.sale_amount,
+    c.first_name || ' ' || c.last_name AS buyer,
+    d.dealership_name
+FROM sales s
+RIGHT JOIN vehicles v ON s.vehicle_id = v.vehicle_id
+LEFT JOIN customers c ON s.customer_id = c.customer_id
+LEFT JOIN dealerships d ON s.dealership_id = d.dealership_id
+ORDER BY v.model, s.sale_date;
