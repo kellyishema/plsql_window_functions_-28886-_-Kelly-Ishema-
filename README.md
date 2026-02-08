@@ -76,6 +76,7 @@ Success Metric:
 # ER diagram 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/af897739-4e46-48d6-a30a-9d30c6bd4362" />
 # JOIN QUERIES
+
 # INNER JOIN
 
 This join returns only records that exist in both tables.
